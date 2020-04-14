@@ -19,7 +19,7 @@ services:
       - redis-vol:/data
 
   laravel-echo-server:
-    image: attractgrouphub/laravel-echo-server
+    image: attractgrouphub/laravel-echo-server:1.0.0
     depends_on:
       - redis
     environment:

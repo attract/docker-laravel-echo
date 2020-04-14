@@ -41,7 +41,7 @@ services:
 
   laravel-echo-server:
     <<: *base-service
-    image: attractgrouphub/laravel-echo-server
+    image: attractgrouphub/laravel-echo-server:1.0.0
     environment:
       <<: *global-variables
       VIRTUAL_PORT: ${VIRTUAL_PORT}
