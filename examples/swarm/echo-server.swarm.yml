@@ -14,7 +14,6 @@ x-base-env: &base-env
 
 x-base: &base-service
   <<: *base-env
-  environment: *global-variables
   logging:
     driver: json-file
     options:
@@ -43,6 +42,12 @@ services:
   redis:
     <<: *base-service
     image: attractgrouphub/laravel-echo-server
+    environment:
+      <<: *global-variables
+      VIRTUAL_PORT: ${VIRTUAL_PORT}
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_EMAIL: shtalinberg@attractgroup.com
     networks:
       default: {aliases: ["${COMPOSE_PROJECT_NAME}.echo"]}
 
