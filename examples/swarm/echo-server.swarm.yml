@@ -39,7 +39,7 @@ networks:
 services:
 ######################################### Helpers Services
 
-  redis:
+  laravel-echo-server:
     <<: *base-service
     image: attractgrouphub/laravel-echo-server
     environment:
